@@ -1,10 +1,10 @@
 FROM n8nio/n8n:1.101.1
 
-ENV N8N_FEATURE_FLAGS=aiCommandBar,aiCommandPrompt
-ENV N8N_EXPERIMENTAL_FEATURES=true
-ENV N8N_PERSONAL_AI=true
-ENV N8N_AI_COPYWRITING=true
-ENV N8N_DEFAULT_LOCALE=en
+ENV N8N_FEATURE_FLAGS=aiCommandBar,aiCommandPrompt \
+    N8N_EXPERIMENTAL_FEATURES=true \
+    N8N_PERSONAL_AI=true \
+    N8N_AI_COPYWRITING=true \
+    N8N_DEFAULT_LOCALE=en
 
-CMD ["n8n"]
-
+# Opcional: fuerza permisos correctos si ves advertencias
+ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
