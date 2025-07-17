@@ -1,9 +1,12 @@
 FROM n8nio/n8n:1.101.1
 
-# Crea el archivo override con los flags forzados
-RUN mkdir -p /data/feature-flags && \
-    echo 'Object.assign(globalThis, { featureFlags: { getAll: () => ({ aiCommandBar: "variant", aiCommandPrompt: "variant" }) } });' \
-    > /data/feature-flags/featureFlags.override.cjs
+# Activamos los feature flags deseados por defecto
+ENV N8N_FEATURE_FLAGS=aiCommandBar,aiCommandPrompt
+ENV N8N_EXPERIMENTAL_FEATURES=true
+ENV N8N_PERSONAL_AI=true
+ENV N8N_AI_COPYWRITING=true
+ENV N8N_DEFAULT_LOCALE=en
 
-# Define el ENTRYPOINT personalizado
-ENTRYPOINT ["node", "--import", "/data/feature-flags/featureFlags.override.cjs", "/usr/local/lib/node_modules/n8n/bin/n8n"]
+# Esto asegura que el binario 'n8n' se ejecute al inicio (ya lo hace por defecto en esta imagen base)
+CMD ["n8n"]
+
