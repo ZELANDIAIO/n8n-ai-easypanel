@@ -5,5 +5,4 @@ ENV N8N_FEATURE_FLAGS=aiCommandBar,aiCommandPrompt \
     N8N_PERSONAL_AI=true \
     N8N_EXPERIMENTAL_FEATURES=true \
     N8N_DEFAULT_LOCALE=en
-
 CMD ["n8n"]
