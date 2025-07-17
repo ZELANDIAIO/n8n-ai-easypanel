@@ -6,5 +6,4 @@ ENV N8N_FEATURE_FLAGS=aiCommandBar,aiCommandPrompt \
     N8N_AI_COPYWRITING=true \
     N8N_DEFAULT_LOCALE=en
 
-# Opcional: fuerza permisos correctos si ves advertencias
-ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+ENTRYPOINT [ "n8n" ]
