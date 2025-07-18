@@ -5,4 +5,4 @@ ENV N8N_FEATURE_FLAGS=aiCommandBar,aiCommandPrompt \
     N8N_PERSONAL_AI=true \
     N8N_AI_COPYWRITING=true
 
-CMD ["n8n"]
+ENTRYPOINT [ "n8n" ]
